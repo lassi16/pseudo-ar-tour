@@ -9,7 +9,12 @@ type Props = {
   audioSrc?: string; // "/audio/sac.mp3" (optional - can be bg music)
 };
 
-export default function CameraOverlay({ title, story, overlayImage, audioSrc }: Props) {
+export default function CameraOverlay({
+  title,
+  story,
+  overlayImage,
+  audioSrc,
+}: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const [error, setError] = useState<string>("");
@@ -143,7 +148,9 @@ export default function CameraOverlay({ title, story, overlayImage, audioSrc }: 
               onClick={playBgMusic}
               className="mt-2 w-full py-3 rounded-xl bg-white/20 text-white font-semibold hover:opacity-90"
             >
-              {isBgMusicPlaying ? "🎵 Music Playing" : "🎵 Play Background Music"}
+              {isBgMusicPlaying
+                ? "🎵 Music Playing"
+                : "🎵 Play Background Music"}
             </button>
           )}
 

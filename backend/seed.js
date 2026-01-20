@@ -9,17 +9,6 @@ const pool = require("./src/db");
 
 const stops = [
   {
-    id: "main-gate",
-    title: "🚪 Main Gate",
-    story:
-      "Entrance on Bihta-Kanpa Road. Every student passes through here, beginning their transformative journey. A symbol of opportunity, growth, and the beginning of countless dreams.",
-    overlay_image: "/overlays/main-gate.png",
-    audio_src: "/audio/main-gate.mp3",
-    lat: 25.5415,
-    lng: 84.8512,
-    radius_meters: 50,
-  },
-  {
     id: "academic-block",
     title: "🏢 Academic Block (Tutorial)",
     story:
