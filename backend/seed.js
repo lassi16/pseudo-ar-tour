@@ -17,7 +17,7 @@ const stops = [
     audio_src: "/audio/main-gate.mp3",
     lat: 25.5415,
     lng: 84.8512,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "academic-block",
@@ -28,7 +28,7 @@ const stops = [
     audio_src: "/audio/academic-block.mp3",
     lat: 25.5395,
     lng: 84.8545,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "library",
@@ -39,7 +39,7 @@ const stops = [
     audio_src: "/audio/library.mp3",
     lat: 25.5358,
     lng: 84.8515,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "sac-hall",
@@ -50,7 +50,7 @@ const stops = [
     audio_src: "/audio/sac-hall.mp3",
     lat: 25.5382,
     lng: 84.857,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "central-dining",
@@ -61,7 +61,7 @@ const stops = [
     audio_src: "/audio/dining-hall.mp3",
     lat: 25.5325,
     lng: 84.853,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "sports-complex",
@@ -72,7 +72,7 @@ const stops = [
     audio_src: "/audio/sports-complex.mp3",
     lat: 25.5375,
     lng: 84.8585,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "hostel-complex",
@@ -83,7 +83,7 @@ const stops = [
     audio_src: "/audio/hostel-complex.mp3",
     lat: 25.531,
     lng: 84.8535,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
   {
     id: "innovation-hub",
@@ -94,7 +94,7 @@ const stops = [
     audio_src: "/audio/innovation-hub.mp3",
     lat: 25.5402,
     lng: 84.8538,
-    radius_meters: 1000,
+    radius_meters: 50,
   },
 ];
 
