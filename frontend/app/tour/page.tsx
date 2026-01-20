@@ -128,11 +128,6 @@ export default function TourPage() {
 
             setTriggeredStop({ id: stopId, title: data.stop.title });
             setStatus(`Unlocked: ${data.stop.title} ✅`);
-
-            setTimeout(() => {
-              router.push(`/overlay/${stopId}`);
-              setTriggeredStop(null);
-            }, 2000);
           }
         } catch {
           setStatus("Error sending location to backend.");
@@ -242,23 +237,36 @@ export default function TourPage() {
         </div>
       </div>
 
-      {/* 🎬 Triggered cinematic popup */}
+      {/* 🎬 Triggered popup with button */}
       {triggeredStop && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6">
-          <div className="w-full max-w-sm rounded-2xl bg-black border border-white/20 p-6 text-center shadow-xl">
-            <p className="text-white/70 text-xs mb-2">LOCATION UNLOCKED</p>
-            <h2 className="text-white text-2xl font-bold">
-              📍 {triggeredStop.title}
-            </h2>
-            <p className="text-white/80 text-sm mt-3">Starting AR story…</p>
-
-            <div className="mt-5 w-full h-2 rounded-full bg-white/10 overflow-hidden">
-              <div className="h-full w-full bg-white animate-pulse" />
-            </div>
-
-            <p className="text-white/50 text-xs mt-4">
-              Teleporting to story mode ✨
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
+          <div className="w-full max-w-sm rounded-2xl bg-black border border-white/20 p-8 text-center shadow-xl">
+            <p className="text-white/70 text-xs mb-3 uppercase tracking-wider">
+              ✨ Location Unlocked
             </p>
+            <h2 className="text-white text-3xl font-bold mb-1">
+              {triggeredStop.title}
+            </h2>
+            <p className="text-white/60 text-sm mb-6">
+              Ready to explore this location?
+            </p>
+
+            <button
+              onClick={() => {
+                router.push(`/overlay/${triggeredStop.id}`);
+                setTriggeredStop(null);
+              }}
+              className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-white/90 transition mb-3"
+            >
+              View Story 📖
+            </button>
+
+            <button
+              onClick={() => setTriggeredStop(null)}
+              className="w-full bg-white/10 text-white font-semibold py-3 rounded-xl hover:bg-white/20 transition border border-white/20"
+            >
+              Continue Exploring 🗺️
+            </button>
           </div>
         </div>
       )}
