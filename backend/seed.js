@@ -17,7 +17,7 @@ const stops = [
     audio_src: "/audio/main-gate.mp3",
     lat: 25.5415,
     lng: 84.8512,
-    radius_meters: 0,
+    radius_meters: 50,
   },
   {
     id: "academic-block",
