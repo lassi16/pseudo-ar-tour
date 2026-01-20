@@ -28,7 +28,7 @@ const stops = [
     audio_src: "/audio/academic-block.mp3",
     lat: 25.5395,
     lng: 84.8545,
-    radius_meters: 1,
+    radius_meters: 50,
   },
   {
     id: "library",
