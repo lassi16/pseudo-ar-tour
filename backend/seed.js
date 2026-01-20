@@ -83,7 +83,7 @@ const stops = [
     audio_src: "/audio/innovation-hub.mp3",
     lat: 25.5402,
     lng: 84.8538,
-    radius_meters: 50,
+    radius_meters: 10,
   },
 ];
 

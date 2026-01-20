@@ -32,6 +32,7 @@ export default function TourPage() {
   } | null>(null);
 
   const lastTriggeredStopRef = useRef<string>("");
+  const triggerLockRef = useRef<boolean>(false);
 
   const nextStop = stops.find((s) => s.title === nextStopTitle) || null;
 
@@ -113,7 +114,10 @@ export default function TourPage() {
             const stopId = data.stop.id as string;
 
             if (lastTriggeredStopRef.current === stopId) return;
+            if (triggerLockRef.current) return;
+
             lastTriggeredStopRef.current = stopId;
+            triggerLockRef.current = true;
 
             // vibration
             if ("vibrate" in navigator) {
@@ -128,6 +132,11 @@ export default function TourPage() {
 
             setTriggeredStop({ id: stopId, title: data.stop.title });
             setStatus(`Unlocked: ${data.stop.title} ✅`);
+
+            // Unlock after 5 seconds so user can interact with popup
+            setTimeout(() => {
+              triggerLockRef.current = false;
+            }, 5000);
           }
         } catch {
           setStatus("Error sending location to backend.");
