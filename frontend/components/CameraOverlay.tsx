@@ -92,7 +92,7 @@ export default function CameraOverlay({ title, story, overlayImage, audioSrc }: 
       }
 
       const audio = new Audio(audioSrc);
-      audio.volume = 0.5;
+      audio.volume = 0.2;
       await audio.play();
 
       setIsBgMusicPlaying(true);

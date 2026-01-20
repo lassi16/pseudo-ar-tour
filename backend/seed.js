@@ -17,7 +17,7 @@ const stops = [
     audio_src: "/audio/main-gate.mp3",
     lat: 25.5415,
     lng: 84.8512,
-    radius_meters: 50,
+    radius_meters: 0,
   },
   {
     id: "academic-block",
@@ -72,7 +72,7 @@ const stops = [
     audio_src: "/audio/sports-complex.mp3",
     lat: 25.5375,
     lng: 84.8585,
-    radius_meters: 500,
+    radius_meters: 50,
   },
   {
     id: "hostel-complex",
