@@ -88,12 +88,23 @@ router.post("/location/update", async (req, res) => {
     const stopsRes = await pool.query("SELECT * FROM stops ORDER BY id ASC;");
     const stops = stopsRes.rows;
 
-    const nextStop = stops[currentStopIndex];
+    // Find the nearest unvisited stop
+    let nextStop = null;
+    let minDistance = Infinity;
+
+    for (let i = currentStopIndex; i < stops.length; i++) {
+      const d = distanceMeters(lat, lng, stops[i].lat, stops[i].lng);
+      if (d < minDistance) {
+        minDistance = d;
+        nextStop = stops[i];
+      }
+    }
+
     if (!nextStop) {
       return res.json({ triggered: false, done: true });
     }
 
-    const d = distanceMeters(lat, lng, nextStop.lat, nextStop.lng);
+    const d = minDistance;
 
     // inside radius => triggered
     if (d <= nextStop.radius_meters) {
